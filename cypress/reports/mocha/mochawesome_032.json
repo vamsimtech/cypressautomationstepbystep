@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-01-06T08:02:00.585Z",
+    "end": "2020-01-06T08:02:14.178Z",
+    "duration": 13593,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "1ed983b7-bd06-4863-9476-a3cd666c5422",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "0eba59c2-6368-4778-8d77-e3081e17ae56",
+          "title": "MyTestSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Table Test",
+              "fullTitle": "MyTestSuite Table Test",
+              "timedOut": null,
+              "duration": 9988,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://testautomationpractice.blogspot.com/');\ncy.get('table[name=BookTable]').contains('td', 'Learn Selenium').should('be.visible'); //  #HTML1 > div.widget-content > table > tbody > tr:nth-child(2) > td:nth-child(3)\ncy.get('table[name=BookTable] > tbody > tr:nth-child(2) > td:nth-child(3)').contains('Selenium').should('be.visible'); // #HTML1 > div.widget-content > table > tbody>tr td:nth-child(2)\n//table[name=BookTable]>tbody>tr td:nth-child(2)\ncy.get('table[name=BookTable]>tbody>tr td:nth-child(2)').each(function ($e, index, $list) {\n  var text = $e.text();\n  if (text.includes('Amod')) {\n    cy.get('table[name=BookTable]>tbody>tr td:nth-child(1)').eq(index).then(function (bname) {\n      var bookname = bname.text();\n      expect(bookname).to.equal('Master In Java');\n    });\n  }\n});",
+              "err": {},
+              "uuid": "58d5e7fa-1ea9-4173-ab73-3ccec8ae8a77",
+              "parentUUID": "0eba59c2-6368-4778-8d77-e3081e17ae56",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "58d5e7fa-1ea9-4173-ab73-3ccec8ae8a77"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 9988,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.0.1"
+    }
+  }
+}

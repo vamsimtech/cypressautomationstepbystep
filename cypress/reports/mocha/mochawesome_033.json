@@ -1,0 +1,130 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 0,
+    "passes": 0,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-01-06T08:02:30.262Z",
+    "end": "2020-01-06T08:02:36.125Z",
+    "duration": 5863,
+    "testsRegistered": 2,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 1,
+    "hasOther": true,
+    "skipped": 2,
+    "hasSkipped": true
+  },
+  "results": [
+    {
+      "uuid": "3aa64e85-9add-4157-9a1a-be11fe1577f2",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "a2971f58-7768-47d3-87b7-17fffcdadf32",
+          "title": "Login",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Create a post",
+              "fullTitle": "Login Create a post",
+              "timedOut": null,
+              "duration": 5754,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "//cy.contains('New Post').click()\n//  cy.get('ul.navbar-nav').children().contains('New Post').click()\ncy.get('ul.navbar-nav').children().as('menu');\ncy.get('@menu').contains('New Post').click();\ncy.hash().should('include', '#/editor'); //cy.location('hash').should('include','#/editor')\ncy.get('form').within(function ($form) {\n  // cy.get('input[placeholder=\"Article Title\"]').type('Test')\n  // cy.get('input[placeholder=\"What\\'s this article about?\"]').type('Test 1')\n  // cy.get('input[placeholder=\"Write your article (in markdown)\"]').type('Test 2')\n  cy.get('input').first().type('Test');\n  cy.get('input').eq(1).type('Test 1');\n  cy.get('textarea').last().type('Test 2');\n  cy.contains('Publish Article').click();\n});\ncy.url().should('include', 'article');",
+              "err": {
+                "message": "CypressError: Location object does not have key: protocal\n\nBecause this error occurred during a 'before all' hook we are skipping the remaining tests in the current suite: 'Login'",
+                "estack": "CypressError: Location object does not have key: protocal\n\nBecause this error occurred during a 'before all' hook we are skipping the remaining tests in the current suite: 'Login'\n    at Object.cypressErr (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:105262:11)\n    at Object.throwErr (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:105217:18)\n    at Object.throwErrByPath (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:105249:17)\n    at getLocation (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:90441:85)\n    at tryCatcher (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:139407:23)\n    at Function.Promise.attempt.Promise.try (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:136682:29)\n    at resolveLocation (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:90451:27)\n    at Context.location (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:90456:9)\n    at http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:100381:33\n    at tryCatcher (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:139407:23)\n    at Promise._settlePromiseFromHandler (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:137343:31)\n    at Promise._settlePromise (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:137400:18)\n    at Promise._settlePromiseCtx (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:137437:10)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueue (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:134137:12)\n    at Async../node_modules/bluebird/js/release/async.js.Async._drainQueues (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:134142:10)\n    at Async.drainQueues (http://react-redux.realworld.io/__cypress/runner/cypress_runner.js:134016:14)",
+                "diff": null
+              },
+              "uuid": "d893461c-a761-4cf0-b9c0-eed07b13d935",
+              "parentUUID": "a2971f58-7768-47d3-87b7-17fffcdadf32",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Mark-unMark as favorite",
+              "fullTitle": "Login Mark-unMark as favorite",
+              "timedOut": null,
+              "duration": 0,
+              "state": "skipped",
+              "speed": null,
+              "pass": false,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "// cy.get('.nav-link').contains(QAM1).click()\ncy.get('ul.navbar-nav').children().contains(QAM1).click();\ncy.contains('My Articles').should('be.visible'); //  cy.get('.ion-heart').click()\ncy.get('.ion-heart').first().click();\ncy.contains('Favorited Articles').click();\ncy.url().should('include', 'favorites'); //cy.get('.ion-heart').first().click()\n// cy.get('.btn-primary').first().then(($fav)=>{\n//     const favCount = $fav.text()\n//     expect(parseInt(favCount)).to.eq(1)\n// }).click()\ncy.get('.btn-primary').first().then(function ($fav) {\n  return $fav.text();\n}).as($favCount);\ncy.get('@favCount').then(function ($cnt) {\n  expected(parseInt($cnt)).to.eq(1);\n});\ncy.get('.btn-primary').first().click();\ncy.reload();\ncy.contains('No articles are here... yet.').should('be.visible');\ncy.go('back'); //cy.go(-1)\n//cy.go('forward')\n//cy.go(1)",
+              "err": {},
+              "uuid": "f2450c3a-fcd6-48d1-9fab-5fd7d0804020",
+              "parentUUID": "a2971f58-7768-47d3-87b7-17fffcdadf32",
+              "isHook": false,
+              "skipped": true
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "d893461c-a761-4cf0-b9c0-eed07b13d935"
+          ],
+          "pending": [],
+          "skipped": [
+            "f2450c3a-fcd6-48d1-9fab-5fd7d0804020"
+          ],
+          "duration": 5754,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.0.1"
+    }
+  }
+}
