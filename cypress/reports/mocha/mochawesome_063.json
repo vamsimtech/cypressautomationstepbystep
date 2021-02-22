@@ -1,0 +1,107 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-02-19T04:36:17.473Z",
+    "end": "2021-02-19T04:36:27.045Z",
+    "duration": 9572,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "519ffd17-6aaa-4a26-a386-fb25a0d36cf0",
+      "title": "",
+      "fullFile": "cypress\\integration\\QAM1\\FixturesDemo.spec.js",
+      "file": "cypress\\integration\\QAM1\\FixturesDemo.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "767ba35f-33ab-4e6c-8efd-1f24ceab49ab",
+          "title": "Name of the group",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "mytest",
+              "fullTitle": "Name of the group mytest",
+              "timedOut": null,
+              "duration": 3930,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('https://admin-demo.nopcommerce.com/login');\ncy.get('input[name=Email]').type(this.data.email);\ncy.get('input[name=Password]').type(this.data.pwd);\ncy.get('input[type=submit]').click();",
+              "err": {},
+              "uuid": "3a574490-169e-4a3b-a155-5266287bcdc6",
+              "parentUUID": "767ba35f-33ab-4e6c-8efd-1f24ceab49ab",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "3a574490-169e-4a3b-a155-5266287bcdc6"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3930,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}

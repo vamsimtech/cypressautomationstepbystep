@@ -1,0 +1,110 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 0,
+    "pending": 0,
+    "failures": 1,
+    "start": "2020-01-15T12:47:16.632Z",
+    "end": "2020-01-15T12:47:29.341Z",
+    "duration": 12709,
+    "testsRegistered": 1,
+    "passPercent": 0,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "3247179f-79a1-4e0c-b637-f0adc8a90994",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "528e570a-e38d-41b9-ad34-2ee77bf99b07",
+          "title": "MyTestSuite",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Table Test",
+              "fullTitle": "MyTestSuite Table Test",
+              "timedOut": null,
+              "duration": 9182,
+              "state": "failed",
+              "speed": null,
+              "pass": false,
+              "fail": true,
+              "pending": false,
+              "context": null,
+              "code": "cy.visit('http://testautomationpractice.blogspot.com/');\ncy.get('table[name=\"BookTable\"]').contains('Learn Selenium').should('be.visible');\ncy.get('table[name=\"BookTable\"]> tbody > tr td:nth-child(2)').each(function ($e, index, $list) {\n  if ($e.text().includes('Amit')) {\n    cy.get('table[name=\"BookTable\"]> tbody > tr td:nth-child(1)').eq(index).then(function (bname) {\n      var bookname = bname.text();\n      expect(bname.text()).to.have('Master In JS');\n    });\n  }\n});",
+              "err": {
+                "message": "TypeError: expect(...).to.have is not a function",
+                "estack": "TypeError: expect(...).to.have is not a function\n    at Context.<anonymous> (http://testautomationpractice.blogspot.com/__cypress/tests?p=cypress\\integration\\QAM1\\Table1.spec.js-258:12:35)",
+                "diff": null
+              },
+              "uuid": "503c8953-a6f1-42d2-b1c9-5e381f01f225",
+              "parentUUID": "528e570a-e38d-41b9-ad34-2ee77bf99b07",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [],
+          "failures": [
+            "503c8953-a6f1-42d2-b1c9-5e381f01f225"
+          ],
+          "pending": [],
+          "skipped": [],
+          "duration": 9182,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.0.1"
+    }
+  }
+}

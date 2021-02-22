@@ -11,8 +11,6 @@ describe('describe block', function(){
          lp.submit()
          cy.title().should('be.equal','Dashboard / nopCommerce administration')
          
-
-
     })
 
 })

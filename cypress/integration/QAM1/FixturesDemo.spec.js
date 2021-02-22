@@ -3,7 +3,7 @@ describe('Name of the group', function() {
 
     before(function(){
         cy.fixture('example1').then(function(data){
-            // "this" represents the current class and cand be accessed outside of block
+            // "this" represents the current class and can be accessed outside of block
             this.data= data
         })
 

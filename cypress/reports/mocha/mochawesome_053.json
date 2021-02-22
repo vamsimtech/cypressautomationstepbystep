@@ -1,0 +1,106 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 1,
+    "passes": 1,
+    "pending": 0,
+    "failures": 0,
+    "start": "2020-02-29T06:40:11.019Z",
+    "end": "2020-02-29T06:40:31.048Z",
+    "duration": 20029,
+    "testsRegistered": 1,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "20364e43-f3ed-401e-8d7a-9d5d9a55f0ab",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "65225d80-a18f-4b5b-8d79-b291bec02a8b",
+          "title": "describe block",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "it block",
+              "fullTitle": "describe block it block",
+              "timedOut": null,
+              "duration": 14587,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "var lp = new _LoginPage[\"default\"]();\nlp.visit();\nlp.fillEmail('admin@yourstore.com');\nlp.fillPassword('admin');\nlp.submit();\ncy.title().should('be.equal', 'Dashboard / nopCommerce administration');",
+              "err": {},
+              "uuid": "c51f82b6-071f-4431-934e-0f745f665cfc",
+              "parentUUID": "65225d80-a18f-4b5b-8d79-b291bec02a8b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "c51f82b6-071f-4431-934e-0f745f665cfc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 14587,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "6.2.2"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false
+      },
+      "version": "4.1.0"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reportDir": "cypress/reports/mocha",
+        "quite": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "4.0.1"
+    }
+  }
+}
