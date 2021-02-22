@@ -1,4 +1,4 @@
-
+// login page
 class LoginPage{
 
     visit(){
